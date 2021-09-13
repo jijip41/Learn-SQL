@@ -15,4 +15,25 @@ exec(`SELECT * FROM users`);
 
 - Not like `SELECT`, `CREATE` and `INSERT` don't retrieve data (Same for `DELETE`, `ALTER`, `BEGIN`)
 
-- Common convention: UPPERCASE for SQL keywords, lower_snace_case for tables and columns
+- Common convention: UPPERCASE for SQL keywords, lower_snake_case for tables and columns
+
+## SQL: Basic column types
+1. `TEXT` - string.
+2. `INTEGER` - whole numbers. can be positive or negative
+3. `REAL` - e.g. 5.17, 0.00002, 11. the same data type as the number type in JS.
+
+```
+exec(`CREATE TABLE cats (name TEXT, age INTEGER)`);
+exec(`INSERT INTO cats (name, age) VALUES ('Ms. Fluff', 3)`);
+exec(`SELECT * FROM cats`);
+
+/// [{age: 3, name: 'Ms. Fluff'}]
+```
+
+
+*** 
+- PostgreSQL has 42 general purpose data types
+- e.g. currency, for IP addresses, for XML, and many more.
+- having many data type can make it easier to ensure that the data is correct.
+***
+
