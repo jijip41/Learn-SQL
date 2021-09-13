@@ -35,5 +35,20 @@ exec(`SELECT * FROM cats`);
 - PostgreSQL has 42 general purpose data types
 - e.g. currency, for IP addresses, for XML, and many more.
 - having many data type can make it easier to ensure that the data is correct.
-***
 
+***
+<br>
+
+## SQL: Selecting columns
+1. When we `SELECT` columns by name, only those columns are returned.
+```
+// Write a query that selects only the login_count column
+
+exec(`CREATE TABLE users (name TEXT, login_count INTEGER)`);
+exec(`INSERT INTO users (name, login_count) VALUES ('Amir', 1)`);
+exec(`SELECT login_count from users`);
+
+//[{login_count: 1}]
+
+// can select multiple columns by separating the columns names with a comma.
+```
